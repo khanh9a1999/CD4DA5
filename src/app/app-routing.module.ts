@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent},
   { path:'home',loadChildren:()=>import('./home/home.module').then(x=>x.HomeModule)},
   //khi link là localhost:4200/home thì load home module ra, trong homemodule có các component con như detail, hone
   { path:'cart', component: CartComponent},

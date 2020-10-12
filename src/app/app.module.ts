@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
 // import { DetailsComponent } from './home/details/details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,15 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     CartComponent,
     CheckoutComponent,
-    LoginComponent
+    LoginComponent,
     // DetailsComponent
   ],
-  imports: [
+  imports: [ //nhập
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule 
   ],
-  providers: [],
+  providers: [], //nhà cung cấp
   bootstrap: [AppComponent]
 })
 export class AppModule { }
