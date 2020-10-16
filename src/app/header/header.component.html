@@ -79,10 +79,10 @@
 								<li class="dropdown"><a href="#">Loại Sản Phẩm<i class="fa fa-angle-down"></i></a>
 									
                                     <ul role="menu" class="sub-menu">
-										<ng-container *ngFor="let loai of loaisp">
+										<ng-container *ngFor="let getloaisp of loaisp">
                                         <li>
 											
-											<a href="shop.html">{{loai.tenLoai}}</a>
+											<a [routerLink] = "['/home/type-product',getloaisp.maLoai]">{{getloaisp.tenLoai}}</a>
 											
 										</li>
 										</ng-container>

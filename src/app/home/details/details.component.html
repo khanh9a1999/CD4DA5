@@ -11,7 +11,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#">{{getloaisp.tenLoai}}</a></h4>
+                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maLoai]">{{getloaisp.tenLoai}}</a></h4>
                             </div>
                         </div>
                     </ng-container>
@@ -111,12 +111,13 @@
                     
                     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
+                            <ng-container *ngFor="let spofloaisps of spofloaisp">
                             <div class="item active">	
                                 <div class="col-sm-4">
                                     <div class="product-image-wrapper">
                                         <div class="single-products">
                                             <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend3.jpg" alt="" />
+                                                <img src="assets/{{spofloaisps.anh}}" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
                                                 <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
@@ -125,20 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">	
-                                <div class="col-sm-4">
-                                    <div class="product-image-wrapper">
-                                        <div class="single-products">
-                                            <div class="productinfo text-center">
-                                                <img src="assets/images/home/recommend3.jpg" alt="" />
-                                                <h2>$56</h2>
-                                                <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        </ng-container>
                         </div>
                          <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                             <i class="fa fa-angle-left"></i>

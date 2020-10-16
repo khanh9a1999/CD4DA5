@@ -145,10 +145,10 @@
                                     <div class="productinfo text-center">
                                         
                                         <a [routerLink] = "['/home/details',getsp.maSP]"><img  src="assets/{{getsp.anh}}" alt="" /></a>
-                                        <h2>{{getsp.donGia}}</h2>
+                                        <h2>{{getsp.donGia}} VNĐ</h2>
                                         <p>{{getsp.tenSP}}</p>
-                                        <a routerLink="/cart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                       
+                                        <a routerLink = "/cart"><button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(getsp)"><span>Add to Cart</span></button>
+                                        <span class="add-to-links"> </span>    </a>                                    
                                     </div>                                  
                                 </div>
                         </div>

@@ -21,5 +21,9 @@ export class HomeComponent extends BaseComponent implements OnInit {
     this._api.get('api/loaisp/loaisp-all').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
     
   }
-
+  addToCart(it) { 
+    this._cart.addToCart(it);
+    alert('Thêm thành công!'); 
+  }
 }
+
