@@ -10,6 +10,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
 // import { DetailsComponent } from './home/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [ //nhập
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule, 
   ],
   providers: [], //nhà cung cấp
   bootstrap: [AppComponent]
