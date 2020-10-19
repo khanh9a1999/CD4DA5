@@ -11,7 +11,7 @@ const routes: Routes = [
   { path:'home',loadChildren:()=>import('./home/home.module').then(x=>x.HomeModule)},
   //khi link là localhost:4200/home thì load home module ra, trong homemodule có các component con như detail, hone
   { path:'cart', component: CartComponent},
-  { path:'checkout', component: CheckoutComponent},
+  { path: 'checkout',component: CheckoutComponent},
   { path:'login', component: LoginComponent}
 ];
 

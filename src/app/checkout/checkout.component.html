@@ -20,13 +20,12 @@
                             <form [formGroup]="orderForm" (ngSubmit)="onSubmit(orderForm.value)">
                                 
                             
-                                <input type="text"  formControlName="tenKH" placeholder="Họ tên">
+                                <input type="text"  formControlName="ho_ten" placeholder="Họ tên">
                                 
-                                <input type="text" formControlName="ngayBan"  placeholder="Địa chỉ">
-                                <input type="text" formControlName="pTTT"  placeholder="Phương thức thanh toán">
-                                <input type="text" formControlName="trangThai"  placeholder="Trạng thái">
+                                <input type="text" formControlName="dia_chi"  placeholder="Địa chỉ">
+                                <input type="text" formControlName="sdt"  placeholder="Số điện thoại">
 
-                                <button class="btn-hover checkout-btn" type="submit">Đặt hàng</button>
+                                <button type="submit" class="button login"><span>Gửi</span></button>
                             </form>
                         </div>
                     </div>
@@ -68,7 +67,7 @@
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">{{it.quantity * it.donGia  | currency:"VND" }}</p>
+                            <p class="cart_total_price">{{it.money | currency:"VND" }}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
