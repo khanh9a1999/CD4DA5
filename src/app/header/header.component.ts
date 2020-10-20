@@ -14,7 +14,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   mail = "khanh9a1999@gmail.com";
   VN = "VietNam";
   VND = "VND";
-  
+ 
   loaisp:any;
   
   constructor(injector : Injector) { 
@@ -22,6 +22,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  
     this._api.get('api/loaisp/loaisp-all').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
   }
 

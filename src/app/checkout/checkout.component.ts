@@ -9,7 +9,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckoutComponent extends BaseComponent implements OnInit {
   items:any;
-  total:any;
   order_total:any;
   public orderForm: FormGroup;
   constructor(injector: Injector) { 
@@ -17,7 +16,12 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    let order = {ho_ten: value.ho_ten, dia_chi:value.dia_chi, sdt:value.sdt,order_total:this.total, listjson_chitiet:this.items};
+    let order = {
+      ho_ten: value.ho_ten, 
+      dia_chi:value.dia_chi, 
+      sdt:value.sdt,
+      order_total: this.order_total, 
+      listjson_chitiet:this.items};
     this._api.post('api/HDB/create', order).takeUntil(this.unsubscribe).subscribe(res => {
       alert('Đặt hàng thành công');
        }, err => { });      
@@ -27,17 +31,17 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.orderForm = new FormGroup({
       ho_ten: new FormControl('', Validators.required),
-      dia_chi: new FormControl('', Validators.required),
-      sdt: new FormControl('', Validators.required),
+      dia_chi: new FormControl('', ),
+      sdt: new FormControl('', ),
     });
 
     this._cart.items.subscribe((res) => {
       this.items = res;
-      this.total = 0;
+      this.order_total = 0;
       for(let x of this.items){
         x.so_luong = +x.quantity;
         x.money = x.quantity * x.donGia;
-        this.total += x.quantity * x.donGia;
+        this.order_total += x.quantity * x.donGia;
       }
     });
 

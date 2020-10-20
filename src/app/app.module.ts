@@ -18,9 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CartComponent,
-    CheckoutComponent,
-    LoginComponent,
+    LoginComponent
 
  
   ],
