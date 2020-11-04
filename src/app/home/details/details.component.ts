@@ -21,7 +21,7 @@ export class DetailsComponent extends BaseComponent implements OnInit {
     this.ct = {};
     this._route.params.subscribe(params => {
       let id = params['id'];
-      this._api.get('api/sanpham/sp-get-by-id/'+id).pipe(takeUntil(this.unsubscribe)).subscribe((res: any) => {
+      this._api.get('api/sanpham/get-by-id/'+id).pipe(takeUntil(this.unsubscribe)).subscribe((res: any) => {
         this.ct = res;
         setTimeout(() => {
           this.loadScripts();
@@ -29,7 +29,7 @@ export class DetailsComponent extends BaseComponent implements OnInit {
       }); 
     });
     
-    this._api.get('api/loaisp/loaisp-all').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
+    this._api.get('api/loaisp/get-category').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
 
     this.spofloaisp = {};
     this._route.params.subscribe(params => {
@@ -41,6 +41,10 @@ export class DetailsComponent extends BaseComponent implements OnInit {
         });
       }); 
     });
+  }
+  addToCart(it) { 
+    this._cart.addToCart(it);
+    alert('Thêm thành công!'); 
   }
 
 }

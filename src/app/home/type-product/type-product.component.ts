@@ -12,14 +12,20 @@ import { takeUntil } from 'rxjs/operators';
 export class TypeProductComponent extends BaseComponent implements OnInit {
 
   loaisp:any;
-  spofloaisp:any;
   ct:any;
+
+  spofloaisp:any;
+  page: any;
+  pageSize: any;
+  totalItems:any;
+  maloai:any;
   constructor(injector : Injector) { 
     super(injector);
    }
 
   ngOnInit(): void {
     this.ct = {};
+
     this._route.params.subscribe(params => {
       let id = params['id'];
       this._api.get('api/sanpham/sp-get-by-id/'+id).pipe(takeUntil(this.unsubscribe)).subscribe((res: any) => {
@@ -29,17 +35,38 @@ export class TypeProductComponent extends BaseComponent implements OnInit {
         });
       }); 
     });
-    this._api.get('api/loaisp/loaisp-all').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
-    this.spofloaisp = {};
+
+    this._api.get('api/loaisp/get-category').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
+    
+    this.spofloaisp = [];
+    this.page = 1;
+    this.pageSize = 5;
+    this._route.params.subscribe(params => {
+      this.maloai = params['id'];
+      this._api.post('api/sanpham/search-category', { 
+        page: this.page, 
+        pageSize: this.pageSize, 
+        maloai: this.maloai}).takeUntil(this.unsubscribe).subscribe(res => {
+        this.spofloaisp = res.data;
+        this.totalItems = res.totalItems;
+        }, err => { }); 
+        });
+  }
+  loadPage(page) { 
     this._route.params.subscribe(params => {
       let id = params['id'];
-      this._api.get('api/sanpham/sp-get-by-loai/'+id).pipe(takeUntil(this.unsubscribe)).subscribe((res: any) => {
-        this.spofloaisp = res;
-        setTimeout(() => {
-          this.loadScripts();
-        });
-      }); 
-    });
+      this._api.post('/api/product/search-category', { 
+        page: page, 
+        pageSize: this.pageSize, 
+        category_id: id}).takeUntil(this.unsubscribe).subscribe(res => {
+        this.spofloaisp = res.data;
+        this.totalItems = res.totalItems;
+        }, err => { });       
+   });   
+  }
+  addToCart(it) { 
+    this._cart.addToCart(it);
+    alert('Thêm thành công!'); 
   }
 
 }

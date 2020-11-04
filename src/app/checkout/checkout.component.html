@@ -55,10 +55,10 @@
                             <a href=""><img src="assets/{{it.anh}}" alt="" style = "width:200px; height:200px;"></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">{{it.tenSP}}</a></h4>
+                            <h4><a href="">{{it.tensp}}</a></h4>
                         </td>
                         <td class="cart_price">
-                            <p>{{it.donGia | currency:"VND" }}</p>
+                            <p>{{it.dongia | currency:"VND" }}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
@@ -67,7 +67,7 @@
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">{{it.money | currency:"VND" }}</p>
+                            <p class="cart_total_price">{{it.dongia * it.quantity | currency:"VND" }}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>

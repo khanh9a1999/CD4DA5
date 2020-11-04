@@ -24,11 +24,11 @@
                             <a href="" ><img src="assets/{{c.anh}}" alt="" style="width:200px; height:200px;"></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">{{c.tenSP}}</a></h4>
+                            <h4><a href="">{{c.tensp}}</a></h4>
                             
                         </td>
                         <td class="cart_price">
-                            <p>{{c.donGia | currency:"VND"}}</p>
+                            <p>{{c.dongia | currency:"VND"}}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
@@ -38,10 +38,10 @@
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">{{c.quantity * c.donGia}}</p>
+                            <p class="cart_total_price">{{c.quantity * c.dongia | currency:"VND" }}</p>
                         </td>
                         <td class="cart_delete">
-                            <a class="button remove-item" title="Remove item" (click)="_cart.deleteItem(c.maSP)"><i class="fa fa-times"></i></a>
+                            <a class="button remove-item" title="Remove item" (click)="_cart.deleteItem(c.masp)"><i class="fa fa-times"></i></a>
                         </td>
                     </tr>
 

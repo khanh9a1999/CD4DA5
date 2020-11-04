@@ -18,6 +18,18 @@ export class BaseComponent {
    public loadScripts() {
          this.renderExternalScript('assets/js/main.js').onload = () => {
          }
+         this.renderExternalScript('assets/js/jquery.js').onload = () => {
+         }
+         this.renderExternalScript('assets/js/bootstrap.min.js').onload = () => {
+         }
+         this.renderExternalScript('assets/js/jquery.scrollUp.min.js').onload = () => {
+         }
+         this.renderExternalScript('assets/js/price-range.js').onload = () => {
+         }
+        this.renderExternalScript('assets/js/jquery.prettyPhoto.js').onload = () => {
+         }
+        this.renderExternalScript('assets/js/main.js').onload = () => {
+         }
        }
    public renderExternalScript(src: string): HTMLScriptElement {
          const script = document.createElement('script');

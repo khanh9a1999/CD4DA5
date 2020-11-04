@@ -10,7 +10,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maLoai]">{{getloaisp.tenLoai}}</a></h4>
+                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maloai]">{{getloaisp.tenloai}}</a></h4>
                             </div>
                         </div>
                     </ng-container>
@@ -33,10 +33,10 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <a [routerLink] = "['/home/details',spofloaisps.maSP]"><img src="assets/{{spofloaisps.anh}}" alt="" /></a>
-                                    <h2>{{spofloaisps.donGia}} VNĐ</h2>
-                                    <p>{{spofloaisps.tenSP}}</p>
-                                    <a routerLink="/cart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm Giỏ Hàng</a>
-                                </div>
+                                    <h2>{{spofloaisps.dongia}} VNĐ</h2>
+                                    <p>{{spofloaisps.tensp}}</p>
+                                    <a routerLink = "/cart"><button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(spofloaisps)"><span>Add to Cart</span></button>
+                                        <span class="add-to-links"> </span>    </a>                                 </div>
                                 
                             </div>
                             

@@ -23,7 +23,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
   
-    this._api.get('api/loaisp/loaisp-all').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
+    this._api.get('api/loaisp/get-category').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
   }
 
 }

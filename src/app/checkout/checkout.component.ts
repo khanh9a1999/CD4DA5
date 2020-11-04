@@ -40,8 +40,8 @@ export class CheckoutComponent extends BaseComponent implements OnInit {
       this.order_total = 0;
       for(let x of this.items){
         x.so_luong = +x.quantity;
-        x.money = x.quantity * x.donGia;
-        this.order_total += x.quantity * x.donGia;
+        x.money = x.quantity * x.dongia;
+        this.order_total += x.quantity * x.dongia;
       }
     });
 

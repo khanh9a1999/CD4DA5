@@ -18,8 +18,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="assets/images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                                <img src="assets/images/home/pricing.png"  class="pricing" alt="" />
+                                <img src="assets/abc.jpg" class="girl img-responsive" alt="" />
+                                
                             </div>
                         </div>
                         <div class="item">
@@ -30,8 +30,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="assets/images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                                <img src="assets/images/home/pricing.png"  class="pricing" alt="" />
+                                <img src="assets/tainghe.jpg" class="girl img-responsive" alt="" />
+
                             </div>
                         </div>
                         
@@ -43,8 +43,8 @@
                                 <button type="button" class="btn btn-default get">Get it now</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="assets/images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                                <img src="assets/images/home/pricing.png" class="pricing" alt="" />
+                                <img src="assets/xbox.jpg" class="girl img-responsive" alt="" />
+                                
                             </div>
                         </div>
                         
@@ -75,7 +75,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maLoai]">{{getloaisp.tenLoai}}</a></h4>
+                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maloai]">{{getloaisp.tenloai}}</a></h4>
                             </div>
                         </div>
                     </ng-container>
@@ -138,23 +138,24 @@
                 <div class="features_items"><!--features_items-->
                     
                     <h2 class="title text-center">Sản Phẩm</h2>
+                    <ng-container *ngFor="let spall of sp ">
                     <div class="col-sm-4">
-                        <ng-container *ngFor="let getsp of sp ">
+                        
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                     <div class="productinfo text-center">
                                         
-                                        <a [routerLink] = "['/home/details',getsp.maSP]"><img  src="assets/{{getsp.anh}}" alt="" /></a>
-                                        <h2>{{getsp.donGia}} VNĐ</h2>
-                                        <p>{{getsp.tenSP}}</p>
-                                        <a routerLink = "/cart"><button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(getsp)"><span>Add to Cart</span></button>
+                                        <a [routerLink] = "['/home/details',spall.masp]"><img  src="assets/{{spall.anh}}" alt="" /></a>
+                                        <h2>{{spall.dongia | currency:"VND" }}</h2>
+                                        <p>{{spall.tensp}}</p>
+                                        <a routerLink = "/cart"><button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(spall)"><span>Add to Cart</span></button>
                                         <span class="add-to-links"> </span>    </a>                                    
                                     </div>                                  
                                 </div>
                         </div>
-                    </ng-container>   
+                      
                     </div> 
-                
+                 </ng-container>
                 </div><!--features_items-->
 
             </div>

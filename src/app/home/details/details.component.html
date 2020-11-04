@@ -11,7 +11,7 @@
                         
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maLoai]">{{getloaisp.tenLoai}}</a></h4>
+                                <h4 class="panel-title"><a [routerLink] = "['/home/type-product',getloaisp.maloai]">{{getloaisp.tenloai}}</a></h4>
                             </div>
                         </div>
                     </ng-container>
@@ -49,17 +49,17 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
-                            <h2>{{ct.tenSP}}</h2>
-                            <p>Xuất xứ: {{ct.xuatXu}}</p>
+                            <h2>{{ct.tensp}}</h2>
+                            <p>Xuất xứ: {{ct.xuatxu}}</p>
                             <img src="assets/images/product-details/rating.png" alt="" />
                             <span>
-                                <span>{{ct.donGia}} Vnđ</span>
+                                <span>{{ct.dongia | currency:"VND" }}</span>
                                 <label>Quantity:</label>
                                 <input type="text" value="3" />
-                                <button type="button" class="btn btn-fefault cart">
+                                <a routerLink = "/cart"><button type="button" class="btn btn-fefault cart" (click)="addToCart(ct)">
                                     <i class="fa fa-shopping-cart"></i>
                                     Add to cart
-                                </button>
+                                </button></a>
                             </span>
                             <a href=""><img src="assets/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
@@ -76,7 +76,7 @@
                     <div class="tab-content">
                         <div class="tab-pane fade" id="companyprofile" >
                             <div class="col-sm-12">
-                                <p style="padding-left: 10px;"> {{ct.moTa}}</p>
+                                <p style="padding-left: 10px;"> {{ct.mota}}</p>
                             </div>
                         </div>  
                         <div class="tab-pane fade active in" id="reviews" >
