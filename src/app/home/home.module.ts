@@ -4,7 +4,7 @@ import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { TypeProductComponent } from './type-product/type-product.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
     declarations: [
         HomeComponent,
@@ -15,6 +15,7 @@ import { TypeProductComponent } from './type-product/type-product.component';
     imports: [
       CommonModule,
       HomeRoutingModule,
+       NgbModule
     ]
   })
   export class HomeModule { }

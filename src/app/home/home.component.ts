@@ -27,28 +27,29 @@ export class HomeComponent extends BaseComponent implements OnInit {
       elem[i].remove();
     }
       this.loadScripts();
-    Observable.combineLatest(
-      this._api.get('api/sanpham/get-all/'+this.index+'/'+this.size),
-    ).takeUntil(this.unsubscribe).subscribe(res => {
-      this.sp = res[0];
-    }, err => {});
-    Observable.combineLatest(
-      this._api.get('/api/sanpham/get-new'),
-    ).takeUntil(this.unsubscribe).subscribe(res => {
-      this.sp_new = res[0];
-    }, err => {});
+      Observable.combineLatest(
+        this._api.get('api/sanpham/get-all/'+this.index+'/'+this.size),
+      ).takeUntil(this.unsubscribe).subscribe(res => {
+        this.sp = res[0];
+      }, err => {});
+      Observable.combineLatest(
+        this._api.get('api/sanpham/get-new'),
+      ).takeUntil(this.unsubscribe).subscribe(res => {
+        this.sp = res[0];
+      }, err => {});
+        
+    }
+    addToCart(it) { 
+      this._cart.addToCart(it);
+      alert('Thêm thành công!'); 
+    }
+    loadPage(page) {
+      Observable.combineLatest(
+        this._api.get('api/sanpham/get-all/'+page+'/'+this.size),
+      ).takeUntil(this.unsubscribe).subscribe(res => {
+        this.sp = res[0];
+      }, err => {});
+    }
   }
-  addToCart(it) { 
-    this._cart.addToCart(it);
-    alert('Thêm thành công!'); 
-  }
-  loadPage(page) {
-    Observable.combineLatest(
-      this._api.get('api/sanpham/get-all/'+page+'/'+this.size),
-    ).takeUntil(this.unsubscribe).subscribe(res => {
-      this.sp = res[0];
-    }, err => {});
-  }
-}
 
 

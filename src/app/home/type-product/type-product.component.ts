@@ -55,10 +55,10 @@ export class TypeProductComponent extends BaseComponent implements OnInit {
   loadPage(page) { 
     this._route.params.subscribe(params => {
       let id = params['id'];
-      this._api.post('/api/product/search-category', { 
+      this._api.post('api/sanpham/search-category', { 
         page: page, 
         pageSize: this.pageSize, 
-        category_id: id}).takeUntil(this.unsubscribe).subscribe(res => {
+        maloai: id}).takeUntil(this.unsubscribe).subscribe(res => {
         this.spofloaisp = res.data;
         this.totalItems = res.totalItems;
         }, err => { });       

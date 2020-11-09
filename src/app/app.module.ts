@@ -11,7 +11,7 @@ import { LoginComponent } from './login/login.component';
 // import { DetailsComponent } from './home/details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+         NgbModule
   ],
   providers: [], //nhà cung cấp
   bootstrap: [AppComponent]
