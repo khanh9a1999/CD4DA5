@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {PaginatorModule} from 'primeng/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
         ReactiveFormsModule,
-         NgbModule
+         NgbModule,
+         PaginatorModule
   ],
   providers: [], //nhà cung cấp
   bootstrap: [AppComponent]

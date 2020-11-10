@@ -161,5 +161,7 @@
             </div>
         </div>
     </div>
-    
+<div class="col-xs-12" style="text-align: right;">
+    <ngb-pagination [collectionSize]="sp[0].total" [pageSize]="size" [(page)]="index" [maxSize]="9" [rotate]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+  </div>
 </section>

@@ -20,7 +20,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.sp=[];
     this.index=1;
-    this.size=8;
+    this.size=9;
     this._api.get('api/loaisp/get-category').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
     let elem = document.getElementsByClassName("script");
     for(var i = elem.length -1; 0 <= i; i--) {
