@@ -40,7 +40,7 @@ export class TypeProductComponent extends BaseComponent implements OnInit {
     
     this.spofloaisp = [];
     this.page = 1;
-    this.pageSize = 9;
+    this.pageSize = 8;
     this._route.params.subscribe(params => {
       this.maloai = params['id'];
       this._api.post('api/sanpham/search-category', { 

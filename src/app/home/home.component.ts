@@ -20,7 +20,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.sp=[];
     this.index=1;
-    this.size=9;
+    this.size=8;
     this._api.get('api/loaisp/get-category').takeUntil(this.unsubscribe).subscribe(res => {this.loaisp = res;})
     let elem = document.getElementsByClassName("script");
     for(var i = elem.length -1; 0 <= i; i--) {
@@ -36,6 +36,11 @@ export class HomeComponent extends BaseComponent implements OnInit {
         this._api.get('api/sanpham/get-new'),
       ).takeUntil(this.unsubscribe).subscribe(res => {
         this.sp = res[0];
+      }, err => {});
+      Observable.combineLatest(
+        this._api.get('api/sanpham/get-new'),
+      ).takeUntil(this.unsubscribe).subscribe(res => {
+        this.sp_new = res[0];
       }, err => {});
         
     }

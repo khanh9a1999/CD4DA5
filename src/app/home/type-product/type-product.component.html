@@ -28,15 +28,14 @@
                 <div class="features_items">
                     <h2 class="title text-center">Sản Phẩm</h2>
                     <ng-container *ngFor="let spofloaisps of spofloaisp">
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <a [routerLink] = "['/home/details',spofloaisps.maSP]"><img src="assets/{{spofloaisps.anh}}" alt="" /></a>
-                                    <h2>{{spofloaisps.dongia}} VNĐ</h2>
-                                    <p>{{spofloaisps.tensp}}</p>
-                                    <a routerLink = "/cart"><button class="button btn-cart ajx-cart" title="Add to Cart" type="button" (click)="addToCart(spofloaisps)"><span>Add to Cart</span></button>
-                                        <span class="add-to-links"> </span>    </a>                                 </div>
+                                    <h2>{{spofloaisps.dongia | currency:"VND" }}</h2>
+                                    <p style="font-size:15px">{{spofloaisps.tensp}}</p>
+                                    <a routerLink="/cart" class="btn btn-default add-to-cart" title="Add to Cart" type="button" (click)="addToCart(spofloaisps)"><i class="fa fa-shopping-cart" ></i>Add to cart</a>                                 </div>
                                 
                             </div>
                             

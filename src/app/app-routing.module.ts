@@ -6,6 +6,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   //khi link là localhost:4200/home thì load home module ra, trong homemodule có các component con như detail, hone
   { path:'cart', component: CartComponent},
   { path: 'checkout',component: CheckoutComponent},
-  { path:'login', component: LoginComponent}
+  { path:'login', component: LoginComponent},
+  { path:'search',component: SearchComponent},
 ];
 
 @NgModule({
